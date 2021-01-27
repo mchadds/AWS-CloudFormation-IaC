@@ -7,7 +7,7 @@ All commands were executed through the Cloud9 CLI to
 - Bash commands in [update.sh](https://github.com/mchadds/AWS-CloudFormation-IaC/blob/main/update.sh) used for copying the .yaml file to the bucket and creating the CloudFormation stack
 - [template.yaml](https://github.com/mchadds/AWS-CloudFormation-IaC/blob/main/template.yaml) holds ine IaC template for the EC2 instance
 
-## Commands
+## Infrastructure as Code
 Detailed infrastructure template found in [template.yaml](https://github.com/mchadds/AWS-CloudFormation-IaC/blob/main/template.yaml): 
 ```yaml
 AWSTemplateFormatVersion: 2010-09-09
