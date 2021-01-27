@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >- 
+    Infrastructure for EC2 Instance
+Parameters: 
+    ImageId:
+        Description: AMI to use eg. ami-047a51fa27710816e
+        Default: ami-047a51fa27710816e
+        Type: String
+    VpcId: 
+        Description: The VPC used by the SG
+        Type: String
+Resources: 
+    WebServer:
+        Type: AWS::EC2::Instance
+        Properties:
+            InstanceType: t2.micro
+            ImageId: !Ref ImageId
+            SecurityGroupIds:
+                -   !GetAtt SecurityGroup.GroupId
+            UserData:
+                'Fn::Base64':
+                    !Sub |
+                        #!/usr/bin/env bash
+                        yum -y update
+                        su ec2-user
+                        sudo yum install httpd -y
+                        sudo service httpd start
+                        sudo service httpd enable
+    SecurityGroup:
+        Type: AWS::EC2::SecurityGroup
+        Properties: 
+            VpcId: !Ref VpcId
+            GroupDescription: 'Open port 80'
+            SecurityGroupIngress:
+                -   IpProtocol: tcp
+                    FromPort: 80
+                    ToPort: 80
+                    CidrIp: "0.0.0.0/0"
+Outputs:
+    PublicIp:
+        Value: !GetAtt WebServer.PublicIp
+        
+        
