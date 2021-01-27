@@ -3,7 +3,7 @@ Automated (& programmatic) deployment of an EC2 instance with Security Groups an
 
 ## Description
 All commands were executed through the Cloud9 CLI to 
-- Create an S3 bucket, 
+- Create an S3 bucket
 - Bash commands in [update.sh](https://github.com/mchadds/AWS-CloudFormation-IaC/blob/main/update.sh) used for copying the .yaml file to the bucket and creating the CloudFormation stack
 - [template.yaml](https://github.com/mchadds/AWS-CloudFormation-IaC/blob/main/template.yaml) holds IaC template for the EC2 instance
 
