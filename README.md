@@ -28,7 +28,7 @@ Resources:
             InstanceType: t2.micro
             ImageId: !Ref ImageId
             SecurityGroupIds:
-                -   !GetAtt SecurityGroup.GroupId
+                !GetAtt SecurityGroup.GroupId
             UserData:
                 'Fn::Base64':
                     !Sub |
