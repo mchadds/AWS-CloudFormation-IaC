@@ -1,6 +1,7 @@
 # AWS-CloudFormation-IaC
 Automated (& programmatic) deployment of an EC2 instance with Security Groups and Web Server via CloudFormation stack - utilizing Infrastructure as Code.
 
+
 ## Description
 All commands were executed through the Cloud9 CLI to 
 - Create an S3 bucket
